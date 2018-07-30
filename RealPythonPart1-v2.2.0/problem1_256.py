@@ -1,11 +1,11 @@
 import re
 
-validation = re.compile(r'[A-Za-zs.]')
+validation = re.compile(r'[\w+]@[A-Za-z]+\.["com" | "org" | "edu" | "net"]')
 
-name = input('Please enter your name: ')
+email = input('Please enter your email: ')
 
-while not validation.search(name):
-    print('Please enter your name correctly!')
-    name = input('Please enter your name: ')
+while not validation.search(email):
+    print('Please enter your email correctly!')
+    email = input('Please enter your email: ')
 
-f'\nYour name is {name}!'
+print('\nYour email is {}!'.format(email))
